@@ -9,7 +9,7 @@ let pageTheme = "dark";
 
 /**
  * Retrieve, assign, and return the latest stored CSS theme list from the browser localstorage.
- * @author BigfootDS
+ * @author eversometiculous
  *
  * @returns Array of objects. 
  */
@@ -24,7 +24,7 @@ function getStoredCssThemes(){
 
 /**
  * Retrieve, assign, and return the latest stored page theme from the browser localstorage.
- * @author BigfootDS
+ * @author eversometiculous
  *
  * @returns String. Should be "light" or "dark".
  */
@@ -44,17 +44,26 @@ function setPageThemeToStorage(){
 	localStorage.setItem("pageTheme", pageTheme);
 }
 
+
 // Check if data exists,
 // if it does, retrieve it,
-// else, set default vairables to localstorage
-
-if (localStorage.getItem("pageTheme") && localStorage.getItem("cssThemes").length > 0) {
-    getStoredCssThemes();
-    getStoredPageTheme();
+// else, set default variables to localstorage
+if (localStorage.getItem("pageTheme") && localStorage.getItem("cssThemes")?.length > 0){
+	getStoredCssThemes();
+	getStoredPageTheme();
 } else {
-    setCssThemesToStorage();
-    setPageThemeToStorage();
+	setCssThemesToStorage();
+	setPageThemeToStorage();
 }
+
+
+
+
+
+
+
+
+
 
 /*
 
